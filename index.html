@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaiah Klosterman - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .initials {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .contact {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 15px;
+            color: #555;
+        }
+        
+        .contact a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Section */
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e0e0e0;
+        }
+        
+        /* Project Cards */
+        .project {
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .project:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .project-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .project-meta {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .live-badge {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .live-badge:hover {
+            background: #229954;
+        }
+        
+        .demo-badge {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .project-description {
+            margin-bottom: 15px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        .features {
+            margin: 15px 0;
+        }
+        
+        .features h4 {
+            font-size: 15px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .features ul {
+            margin-left: 20px;
+        }
+        
+        .features li {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .tech-tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .impact {
+            background: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 12px 15px;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .impact strong {
+            color: #f39c12;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            color: white;
+            border: none;
+            margin-bottom: 15px;
+        }
+        
+        .cta p {
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #2c3e50;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .header, .section {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .project-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="initials">IK</div>
+            <h1>Isaiah Klosterman</h1>
+            <div class="subtitle">Certified Bubble Developer | Production Apps Specialist</div>
+            <div class="contact">
+                <span>📧 isaiah@klosdigital.com</span>
+                <span>📱 (605) 839-6107</span>
+                <a href="https://linkedin.com/in/isaiah-klosterman" target="_blank">🔗 LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Live Applications -->
+        <div class="section">
+            <h2>Live Production Applications</h2>
+            <p style="margin-bottom: 30px; color: #666;">Full-stack Bubble applications currently serving real users. Sorted by technical complexity - each demonstrates expertise in workflows, database design, API integrations, and production deployment.</p>
+
+            <!-- 1. AIPatiently (Most Complex) -->
+            <div class="project">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">AIPatiently</div>
+                        <div class="project-meta">Healthcare Technology | AI Platform - Complexity: 10/10</div>
+                    </div>
+                    <div>
+                        <a href="https://aipatiently.com" target="_blank" class="live-badge">🌐 Live App</a>
+                        <span class="demo-badge">⭐ Most Complex</span>
+                    </div>
+                </div>
+                
+                <div class="project-description">
+                    An AI-powered application that helps children in hospital waiting rooms generate personalized animated videos, reducing stress and anxiety during medical visits. Built entirely in Bubble with complex AI workflow orchestration and asynchronous processing.
+                </div>
+                
+                <div class="features">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>AI-powered video generation using advanced language models (OpenAI/Anthropic APIs)</li>
+                        <li>Asynchronous job handling for long-running AI operations with progress tracking</li>
+                        <li>Real-time video processing and rendering workflows</li>
+                        <li>Child-friendly interface with intuitive, age-appropriate controls</li>
+                        <li>Healthcare-appropriate content filtering and moderation systems</li>
+                        <li>Responsive design optimized for tablets and mobile devices in waiting rooms</li>
+                        <li>Error handling and retry logic for AI API failures</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">Bubble.io</span>
+                    <span class="tech-tag">AI APIs (GPT/Claude)</span>
+                    <span class="tech-tag">Video Processing</span>
+                    <span class="tech-tag">Async Workflows</span>
+                    <span class="tech-tag">Healthcare Compliance</span>
+                    <span class="tech-tag">Responsive Design</span>
+                    <span class="tech-tag">AWS Hosting</span>
+                </div>
+                
+                <div class="impact">
+                    <strong>Impact:</strong> Serving children in healthcare settings with mission-critical reliability. Demonstrates expertise in complex API orchestration, async workflow management, error handling, and user experience design for sensitive contexts.
+                </div>
+            </div>
+
+            <!-- 2. Brilliant Base (Legal CRM) -->
+            <div class="project">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Brilliant Base (Legal CRM)</div>
+                        <div class="project-meta">Legal Services | Enterprise SaaS - Complexity: 9/10</div>
+                    </div>
+                    <div>
+                        <a href="https://brilliantbase.com" target="_blank" class="live-badge">🌐 Live App</a>
+                    </div>
+                </div>
+                
+                <div class="project-description">
+                    Enterprise-grade customer relationship management system built specifically for law firms. Comprehensive case management, client tracking, billing workflows, and automated communications. Designed for multi-user collaboration with role-based permissions and compliance features.
+                </div>
+                
+                <div class="features">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Advanced case tracking with customizable status workflows and milestone management</li>
+                        <li>Client and contact management with relationship mapping and communication history</li>
+                        <li>Time tracking and billing automation with invoice generation</li>
+                        <li>Document management with secure access controls and version tracking</li>
+                        <li>Automated client reminder system with email/SMS integration</li>
+                        <li>Role-based access control for attorneys, paralegals, and administrative staff</li>
+                        <li>Custom reporting and analytics for case metrics and firm performance</li>
+                        <li>Conflict checking and compliance workflows for legal industry requirements</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">Bubble.io</span>
+                    <span class="tech-tag">Complex Database Architecture</span>
+                    <span class="tech-tag">Role-Based Access Control</span>
+                    <span class="tech-tag">API Integrations</span>
+                    <span class="tech-tag">Workflow Automation</span>
+                    <span class="tech-tag">Multi-User SaaS</span>
+                    <span class="tech-tag">Document Management</span>
+                    <span class="tech-tag">Privacy Rules</span>
+                </div>
+                
+                <div class="impact">
+                    <strong>Impact:</strong> Streamlined legal practice operations, reducing case management time by 50%+ and improving client communication. Enterprise-ready SaaS platform serving multiple law firms with complex business logic.
+                </div>
+            </div>
+
+            <!-- 3. Meals on Wheels -->
+            <div class="project">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Meals on Wheels Platform</div>
+                        <div class="project-meta">Nonprofit Services | Operations System - Complexity: 8/10</div>
+                    </div>
+                    <div>
+                        <a href="https://mow.paralleldev.io" target="_blank" class="live-badge">🌐 Live App</a>
+                    </div>
+                </div>
+                
+                <div class="project-description">
+                    Complete meal delivery management system for Meals on Wheels operations, handling volunteer coordination, route planning, recipient management, and delivery tracking. Serves a critical nonprofit mission with enterprise-grade reliability.
+                </div>
+                
+                <div class="features">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Volunteer management and scheduling system with availability tracking</li>
+                        <li>Recipient database with dietary restrictions and special needs tracking</li>
+                        <li>Route planning and optimization for daily deliveries</li>
+                        <li>Real-time delivery status tracking and confirmation workflows</li>
+                        <li>Automated notifications for volunteers and coordinators</li>
+                        <li>Reporting dashboard for program metrics and compliance requirements</li>
+                        <li>Mobile-responsive interface for volunteers using tablets/phones in the field</li>
+                        <li>Multi-stakeholder coordination (coordinators, volunteers, recipients)</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">Bubble.io</span>
+                    <span class="tech-tag">Route Planning</span>
+                    <span class="tech-tag">Database Design</span>
+                    <span class="tech-tag">Workflow Automation</span>
+                    <span class="tech-tag">Mobile Responsive</span>
+                    <span class="tech-tag">Real-time Tracking</span>
+                    <span class="tech-tag">Reporting</span>
+                </div>
+                
+                <div class="impact">
+                    <strong>Impact:</strong> Streamlined nonprofit operations serving vulnerable populations. Improved delivery coordination efficiency and volunteer management for critical community services.
+                </div>
+            </div>
+
+            <!-- 4. Gym Membership Portal -->
+            <div class="project">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Gym Membership Management Portal</div>
+                        <div class="project-meta">Fitness & Wellness | Client Platform - Complexity: 7/10</div>
+                    </div>
+                    <div>
+                        <span class="live-badge" style="background: #95a5a6; cursor: default;">🔒 Client Access Only</span>
+                    </div>
+                </div>
+                
+                <div class="project-description">
+                    Complete membership management system with class booking, payment processing, and automated member engagement. Integrated payment gateway, real-time scheduling, and multi-channel communications.
+                </div>
+                
+                <div class="features">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Real-time class scheduling with capacity management and waitlist functionality</li>
+                        <li>Stripe payment integration for memberships, classes, and recurring billing</li>
+                        <li>Dynamic member dashboards with attendance history and goal tracking</li>
+                        <li>Automated email/SMS reminders via Twilio API integration</li>
+                        <li>Admin panel for class management, instructor scheduling, and reporting</li>
+                        <li>Membership tier management with benefits and pricing rules</li>
+                        <li>Privacy rules for secure member data access and PII protection</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">Bubble.io</span>
+                    <span class="tech-tag">Stripe API</span>
+                    <span class="tech-tag">Twilio API</span>
+                    <span class="tech-tag">Real-time Scheduling</span>
+                    <span class="tech-tag">Database Design</span>
+                    <span class="tech-tag">Privacy Rules</span>
+                    <span class="tech-tag">Payment Processing</span>
+                </div>
+                
+                <div class="impact">
+                    <strong>Impact:</strong> Reduced administrative workload by 70% through automation. Improved member retention with proactive engagement and seamless booking experience.
+                </div>
+            </div>
+
+            <!-- 5. Network Monitoring Dashboard -->
+            <div class="project">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Network Monitoring Dashboard</div>
+                        <div class="project-meta">IT Operations | Infrastructure - Complexity: 6/10</div>
+                    </div>
+                    <div>
+                        <span class="live-badge" style="background: #95a5a6; cursor: default;">🔒 Private</span>
+                    </div>
+                </div>
+                
+                <div class="project-description">
+                    Custom monitoring dashboard integrating multiple network infrastructure APIs to provide centralized visibility and alerting for IT operations.
+                </div>
+                
+                <div class="features">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Multi-source API integration (network devices, servers, services)</li>
+                        <li>Real-time status monitoring with automatic refresh intervals</li>
+                        <li>Alert system with email/SMS notifications for outages</li>
+                        <li>Historical data visualization and trending analysis</li>
+                        <li>Custom plugin development for specific monitoring needs</li>
+                        <li>Role-based dashboard views for different team members</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">Bubble.io</span>
+                    <span class="tech-tag">Custom Plugins</span>
+                    <span class="tech-tag">Multi-API Integration</span>
+                    <span class="tech-tag">Data Visualization</span>
+                    <span class="tech-tag">AWS Lightsail</span>
+                    <span class="tech-tag">Real-time Updates</span>
+                </div>
+                
+                <div class="impact">
+                    <strong>Impact:</strong> Improved operational visibility and reduced incident response time. Saved $400 annually in third-party monitoring costs.
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Expertise -->
+        <div class="section">
+            <h2>Technical Expertise</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div>
+                    <h4 style="color: #2c3e50; margin-bottom: 10px;">Bubble.io Development</h4>
+                    <ul style="margin-left: 20px; color: #666; font-size: 14px;">
+                        <li>Workflows & Logic</li>
+                        <li>Database Design</li>
+                        <li>Privacy Rules & Security</li>
+                        <li>Custom Plugin Development</li>
+                        <li>API Connector</li>
+                        <li>Version Control</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #2c3e50; margin-bottom: 10px;">Programming</h4>
+                    <ul style="margin-left: 20px; color: #666; font-size: 14px;">
+                        <li>JavaScript (Custom Elements)</li>
+                        <li>Python</li>
+                        <li>PowerShell</li>
+                        <li>REST API Design</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #2c3e50; margin-bottom: 10px;">Cloud & DevOps</h4>
+                    <ul style="margin-left: 20px; color: #666; font-size: 14px;">
+                        <li>AWS Lightsail</li>
+                        <li>Azure</li>
+                        <li>Docker</li>
+                        <li>CI/CD Best Practices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta">
+            <h2>Let's Build Something Great</h2>
+            <p>Available for full-time, part-time, or contract work. Currently building production apps for clients.</p>
+            <a href="mailto:isaiah@klosdigital.com" class="cta-button">Get in Touch</a>
+        </div>
+    </div>
+</body>
+</html>
