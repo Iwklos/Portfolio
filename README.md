@@ -1,1 +1,0 @@
-# isaiah-klosterman.github.io
